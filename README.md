@@ -1,7 +1,7 @@
 Viewfield Views Area
 ====================
 
-Create an entity with a viewfield. Point that viewfield to a view. Show that entity as a header/footer in that view! 
+Drupal 7 module. Create an entity with a viewfield. Point that viewfield to a view. Show that entity as a header/footer in that view! 
 
 Provides an Area for views where you can select
 
