@@ -1,0 +1,7 @@
+name = Viewfield Views Area
+core = 7.x
+package = Views
+version = 7.x-1.0
+project = viewfield_views_area
+dependencies[] = viewfield
+files[] = views/handlers/viewfield_views_area_handler_area_entity.inc

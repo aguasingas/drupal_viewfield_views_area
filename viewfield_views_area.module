@@ -1,0 +1,42 @@
+<?php
+/**
+ * @file
+ * Code for Viewfield Views Area.
+ */
+
+
+/**
+ * Implements hook_views_data().
+ *
+ * Creates views area for Viewfield Views Area.
+ */
+function viewfield_views_area_views_data() {
+
+  $data['viewfield_views_area__global']['table']['group'] = t('Entity');
+  $data['viewfield_views_area__global']['table']['join'] = array(
+    // #global let's it appear all the time.
+    '#global' => array(),
+  );
+  $data['viewfield_views_area__global']['entity'] = array(
+    'title' => t('Viewfield Views Area'),
+    'help' => t('Displays a entity that references this view via a viewfield, or provides a link to create one that does.'),
+    'area' => array(
+      'handler' => 'viewfield_views_area_handler_area_entity',
+    ),
+  );
+
+  return $data;
+}
+
+/**
+ * Implements hook_form_alter.
+ *
+ * Provides autopopulate for entity creation via viewfield_views_area link.
+ */
+function viewfield_views_area_form_alter(&$form, &$form_state, $form_id) {
+  $params = drupal_get_query_parameters();
+  if (isset($params['viewsfield']) && isset($params['viewsfield_field'])) {
+    $field_arg = $params['viewsfield_field'];
+    $form[$field_arg]['und'][0]['vname']['#default_value'] = $params['viewsfield'];
+  }
+}
