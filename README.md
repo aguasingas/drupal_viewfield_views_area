@@ -12,6 +12,8 @@ Provides an Area for views where you can select
 
 So, if an Entity of that type and bundle includes a field that points to that display in that View, you entity will be printed with that View mode! 
 
+You can use it to provide easy header/footer views management for not-so-technical editors.
+
 Great!!
 
 Dependencies: 
